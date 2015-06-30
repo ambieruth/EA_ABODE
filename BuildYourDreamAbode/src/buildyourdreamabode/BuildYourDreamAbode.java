@@ -5,8 +5,13 @@
  */
 package buildyourdreamabode;
 
+import byui.cit260.buildYourDreamAbode.model.Designer;
 import byui.cit260.buildYourDreamAbode.model.House;
+import byui.cit260.buildYourDreamAbode.model.HouseSite;
+import byui.cit260.buildYourDreamAbode.model.Location;
+import byui.cit260.buildYourDreamAbode.model.Map;
 import byui.cit260.buildYourDreamAbode.model.Player;
+import byui.cit260.buildYourDreamAbode.model.SupplyStore;
 
 /**
  *
@@ -34,6 +39,51 @@ public class BuildYourDreamAbode {
         
         String houseInfo=houseOne.toString();
         System.out.println(houseInfo);
+        
+        SupplyStore supplyStore = new SupplyStore();
+        
+        supplyStore.setDescription("This is where you will buy all your supplies.");
+        supplyStore.setTravelTime(1);
+        supplyStore.setNoOfItems(4);
+        
+        String supplyStoreInfo = supplyStore.toString();
+        System.out.println(supplyStoreInfo);
+        
+        HouseSite houseSite = new HouseSite();
+        
+        houseSite.setDescription("Welcome to the house site.");
+        houseSite.setTravelTime(1);
+        
+        String houseSiteInfo = houseSite.toString();
+        System.out.println(houseSiteInfo);
+        
+        Location location = new Location();
+        
+        location.setRow("3");
+        location.setColumn("3");
+        location.setVisited("Yes");
+        location.setAmountRemaining(2);
+        
+        String locationInfo = location.toString();
+        System.out.println(locationInfo);
+        
+        Designer designerOne = new Designer();
+        
+        designerOne.setName("Mark Jacobs");
+        designerOne.setDescription("Mark is the preeminent designer in the category of ultra modern.");
+        designerOne.setCoordinates("You are currently at the House Site.");
+        
+        String designerInfo = designerOne.toString();
+        System.out.println(designerInfo);
+        
+        Map mapOne = new Map();
+        
+        mapOne.setRowCount(4);
+        mapOne.setColumnCount(4);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
     }
     
 }
