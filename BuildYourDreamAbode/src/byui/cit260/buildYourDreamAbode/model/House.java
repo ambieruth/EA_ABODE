@@ -16,15 +16,15 @@ public class House implements Serializable {
     
     //class instance variables
     private String description;
-    private double numberOfBedrooms;
+    private int numberOfBedrooms;
     private double numberOfBathrooms;
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.description);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.numberOfBedrooms) ^ (Double.doubleToLongBits(this.numberOfBedrooms) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.numberOfBathrooms) ^ (Double.doubleToLongBits(this.numberOfBathrooms) >>> 32));
+        hash = 37 * hash + Objects.hashCode(this.description);
+        hash = 37 * hash + this.numberOfBedrooms;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.numberOfBathrooms) ^ (Double.doubleToLongBits(this.numberOfBathrooms) >>> 32));
         return hash;
     }
 
@@ -40,7 +40,7 @@ public class House implements Serializable {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.numberOfBedrooms) != Double.doubleToLongBits(other.numberOfBedrooms)) {
+        if (this.numberOfBedrooms != other.numberOfBedrooms) {
             return false;
         }
         if (Double.doubleToLongBits(this.numberOfBathrooms) != Double.doubleToLongBits(other.numberOfBathrooms)) {
@@ -65,11 +65,11 @@ public class House implements Serializable {
         this.description = description;
     }
 
-    public double getNumberOfBedrooms() {
+    public int getNumberOfBedrooms() {
         return numberOfBedrooms;
     }
 
-    public void setNumberOfBedrooms(double numberOfBedrooms) {
+    public void setNumberOfBedrooms(int numberOfBedrooms) {
         this.numberOfBedrooms = numberOfBedrooms;
     }
 
@@ -81,18 +81,5 @@ public class House implements Serializable {
         this.numberOfBathrooms = numberOfBathrooms;
     }
 
-    public void getDescription(String your_new_home_is_now_built_Now_it_is_time) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getNumberOfBedrooms(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getNumberOfBathrooms(double d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
     
 }

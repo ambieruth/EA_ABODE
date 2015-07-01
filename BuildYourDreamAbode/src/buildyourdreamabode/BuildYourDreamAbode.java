@@ -5,19 +5,14 @@
  */
 package buildyourdreamabode;
 
-import byui.cit260.buildYourDreamAbode.model.Beds;
-import byui.cit260.buildYourDreamAbode.model.Chairs;
-import byui.cit260.buildYourDreamAbode.model.Couches;
+import byui.cit260.buildYourDreamAbode.control.GameControl;
 import byui.cit260.buildYourDreamAbode.model.Designer;
 import byui.cit260.buildYourDreamAbode.model.House;
 import byui.cit260.buildYourDreamAbode.model.HouseSite;
 import byui.cit260.buildYourDreamAbode.model.InventoryItem;
-import byui.cit260.buildYourDreamAbode.model.Location;
 import byui.cit260.buildYourDreamAbode.model.Map;
-import byui.cit260.buildYourDreamAbode.model.Paint;
-import byui.cit260.buildYourDreamAbode.model.Player;
 import byui.cit260.buildYourDreamAbode.model.SupplyStore;
-import byui.cit260.buildYourDreamAbode.model.Tables;
+import byui.cit260.buildYourDreamAbode.view.StartProgramView;
 
 /**
  *
@@ -25,16 +20,21 @@ import byui.cit260.buildYourDreamAbode.model.Tables;
  */
 public class BuildYourDreamAbode {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static GameControl currentGame = null;
+    private static Designer designer = null;
+    
     public static void main(String[] args) {
-        Player playerOne= new Player();
+        //create StartProgramView and start the program
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
         
-        playerOne.setName("Joe Smith");
+        Designer designerOne = new Designer();
         
-        String playerInfo=playerOne.toString();
-        System.out.println(playerInfo);
+        designerOne.setName("Mark Jacobs");
+        designerOne.setCoordinates("You are currently at the House Site.");
+        
+        String designerInfo = designerOne.toString();
+        System.out.println(designerInfo);
         
         House houseOne = new House ();
         
@@ -48,7 +48,6 @@ public class BuildYourDreamAbode {
         SupplyStore supplyStore = new SupplyStore();
         
         supplyStore.setDescription("This is where you will buy all your supplies.");
-        supplyStore.setNoOfItems(4);
         
         String supplyStoreInfo = supplyStore.toString();
         System.out.println(supplyStoreInfo);
@@ -60,24 +59,6 @@ public class BuildYourDreamAbode {
         String houseSiteInfo = houseSite.toString();
         System.out.println(houseSiteInfo);
         
-        Location location = new Location();
-        
-        location.setRow(3);
-        location.setColumn(3);
-        location.setAmountRemaining(2);
-        
-        String locationInfo = location.toString();
-        System.out.println(locationInfo);
-        
-        Designer designerOne = new Designer();
-        
-        designerOne.setName("Mark Jacobs");
-        designerOne.setDescription("Mark is the preeminent designer in the category of ultra modern.");
-        designerOne.setCoordinates("You are currently at the House Site.");
-        
-        String designerInfo = designerOne.toString();
-        System.out.println(designerInfo);
-        
         Map mapOne = new Map();
         
         mapOne.setRowCount(4);
@@ -88,56 +69,30 @@ public class BuildYourDreamAbode {
         
         InventoryItem inventory= new InventoryItem();
         
-        inventory.setInventoryType("Bed");
-        inventory.setQuantityInStock(3);
-        inventory.setRequiredAmount(4);
+        inventory.setBeds(5);
+        inventory.setRequiredAmount(5);
+        inventory.setTables(2);
+        inventory.setCouches(3);
+        inventory.setChairs(12);
+        inventory.setPaint(10);
         
         String inventoryInfo=inventory.toString();
         System.out.println(inventoryInfo);
         
-        Beds bed = new Beds ();
-        
-        bed.setWidth(5.0);
-        bed.setLength(5.0);
-        
-        String bedInfo=bed.toString();
-        System.out.println(bedInfo);
-        
-        Paint paint = new Paint ();
-        
-        paint.setColor("white");
-        paint.setAmount(5.0);
-        
-        String paintInfo=paint.toString();
-        System.out.println(paintInfo);
-        
-        Couches couch = new Couches ();
-        
-        couch.setLength(5.0);
-        couch.setWidth(5.0);
-        couch.setColor("yellow");
-        
-        String couchInfo=couch.toString();
-        System.out.println(couchInfo);
-        
-        Chairs chair = new Chairs ();
-        
-        chair.setLength(Double.NaN);
-        chair.setWidth(Double.NaN);
-        chair.setColor("brown");
-        
-        String chairInfo=chair.toString();
-        System.out.println(chairInfo);
-        
-        Tables table = new Tables ();
-        
-        table.setLength(Double.NaN);
-        table.setWidth(Double.NaN);
-        table.setColor("blue");
-        
-        String tableInfo=table.toString();
-        System.out.println(tableInfo);
-        
     }
-    
+public static GameControl getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(GameControl currentGame) {
+        BuildYourDreamAbode.currentGame = currentGame;
+    }
+
+    public static Designer getDesigner() {
+        return designer;
+    }
+
+    public static void setDesigner(Designer designer) {
+        BuildYourDreamAbode.designer = designer;
+    }
 }

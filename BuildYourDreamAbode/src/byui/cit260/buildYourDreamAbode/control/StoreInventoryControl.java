@@ -9,7 +9,7 @@ package byui.cit260.buildYourDreamAbode.control;
  *
  * @author ElisaHutchings
  */
-public class InventoryControl {
+public class StoreInventoryControl {
     
     public int calcBed(int inventory, int needed ) {
         

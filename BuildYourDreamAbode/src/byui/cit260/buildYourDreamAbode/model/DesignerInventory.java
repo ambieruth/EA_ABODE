@@ -6,31 +6,27 @@
 package byui.cit260.buildYourDreamAbode.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
- * @author ambiesnell
+ * @author ElisaHutchings
  */
-public class InventoryItem implements Serializable {
+public class DesignerInventory implements Serializable{
     
-    //class instance variable
     private int beds;
     private int tables;
     private int chairs;
     private int couches;
     private int paint;
-    private int requiredAmount;
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + this.beds;
-        hash = 71 * hash + this.tables;
-        hash = 71 * hash + this.chairs;
-        hash = 71 * hash + this.couches;
-        hash = 71 * hash + this.paint;
-        hash = 71 * hash + this.requiredAmount;
+        hash = 79 * hash + this.beds;
+        hash = 79 * hash + this.tables;
+        hash = 79 * hash + this.chairs;
+        hash = 79 * hash + this.couches;
+        hash = 79 * hash + this.paint;
         return hash;
     }
 
@@ -42,7 +38,7 @@ public class InventoryItem implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final InventoryItem other = (InventoryItem) obj;
+        final DesignerInventory other = (DesignerInventory) obj;
         if (this.beds != other.beds) {
             return false;
         }
@@ -58,18 +54,15 @@ public class InventoryItem implements Serializable {
         if (this.paint != other.paint) {
             return false;
         }
-        if (this.requiredAmount != other.requiredAmount) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "InventoryItem{" + "beds=" + beds + ", tables=" + tables + ", chairs=" + chairs + ", couches=" + couches + ", paint=" + paint + ", requiredAmount=" + requiredAmount + '}';
+        return "DesignerInventory{" + "beds=" + beds + ", tables=" + tables + ", chairs=" + chairs + ", couches=" + couches + ", paint=" + paint + '}';
     }
 
-    public InventoryItem() {
+    public DesignerInventory() {
     }
 
     public int getBeds() {
@@ -110,14 +103,6 @@ public class InventoryItem implements Serializable {
 
     public void setPaint(int paint) {
         this.paint = paint;
-    }
-
-    public int getRequiredAmount() {
-        return requiredAmount;
-    }
-
-    public void setRequiredAmount(int requiredAmount) {
-        this.requiredAmount = requiredAmount;
     }
 
     
