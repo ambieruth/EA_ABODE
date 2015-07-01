@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Paint implements Serializable {
     
     private String color;
-    private Double amount;
+    private double amount;
 
     public Paint() {
     }

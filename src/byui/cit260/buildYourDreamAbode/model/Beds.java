@@ -14,8 +14,8 @@ import java.util.Objects;
  */
 public class Beds implements Serializable {
     
-    private Double length;
-    private Double width; 
+    private double length;
+    private double width; 
 
     public Beds() {
     }

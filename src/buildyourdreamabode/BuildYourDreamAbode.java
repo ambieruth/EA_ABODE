@@ -52,8 +52,8 @@ public class BuildYourDreamAbode {
         
         Beds bed = new Beds ();
         
-        bed.setWidth(Double.NaN);
-        bed.setLength(Double.NaN);
+        bed.setWidth(3.00);
+        bed.setLength(4.00);
         
         String bedInfo=bed.toString();
         System.out.println(bedInfo);
@@ -61,7 +61,7 @@ public class BuildYourDreamAbode {
         Paint paint = new Paint ();
         
         paint.setColor("white");
-        paint.setAmount(Double.NaN);
+        paint.setAmount(4.25);
         
         String paintInfo=paint.toString();
         System.out.println(paintInfo);
