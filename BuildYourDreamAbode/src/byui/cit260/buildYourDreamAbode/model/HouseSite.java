@@ -16,16 +16,12 @@ public class HouseSite implements Serializable{
     
     //class instance variables
     private String description;
-    private double travelTime;
-    private String blocked;
-    private String symbol;  
+    private String symbol;
 
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 7;
         hash = 97 * hash + Objects.hashCode(this.description);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 97 * hash + Objects.hashCode(this.blocked);
         hash = 97 * hash + Objects.hashCode(this.symbol);
         return hash;
     }
@@ -42,12 +38,6 @@ public class HouseSite implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.travelTime) != Double.doubleToLongBits(other.travelTime)) {
-            return false;
-        }
-        if (!Objects.equals(this.blocked, other.blocked)) {
-            return false;
-        }
         if (!Objects.equals(this.symbol, other.symbol)) {
             return false;
         }
@@ -56,7 +46,7 @@ public class HouseSite implements Serializable{
 
     @Override
     public String toString() {
-        return "HouseSite{" + "description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", symbol=" + symbol + '}';
+        return "HouseSite{" + "description=" + description + ", symbol=" + symbol + '}';
     }
 
     public HouseSite() {
@@ -68,22 +58,6 @@ public class HouseSite implements Serializable{
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public double getTravelTime() {
-        return travelTime;
-    }
-
-    public void setTravelTime(double travelTime) {
-        this.travelTime = travelTime;
-    }
-
-    public String getBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(String blocked) {
-        this.blocked = blocked;
     }
 
     public String getSymbol() {

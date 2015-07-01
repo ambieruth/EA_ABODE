@@ -43,7 +43,6 @@ public class BuildYourDreamAbode {
         SupplyStore supplyStore = new SupplyStore();
         
         supplyStore.setDescription("This is where you will buy all your supplies.");
-        supplyStore.setTravelTime(1);
         supplyStore.setNoOfItems(4);
         
         String supplyStoreInfo = supplyStore.toString();
@@ -52,16 +51,14 @@ public class BuildYourDreamAbode {
         HouseSite houseSite = new HouseSite();
         
         houseSite.setDescription("Welcome to the house site.");
-        houseSite.setTravelTime(1);
         
         String houseSiteInfo = houseSite.toString();
         System.out.println(houseSiteInfo);
         
         Location location = new Location();
         
-        location.setRow("3");
-        location.setColumn("3");
-        location.setVisited("Yes");
+        location.setRow(3);
+        location.setColumn(3);
         location.setAmountRemaining(2);
         
         String locationInfo = location.toString();

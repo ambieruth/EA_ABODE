@@ -15,18 +15,16 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     //class instance variables
-    private String row;
-    private String column;
-    private String visited;
+    private int row;
+    private int column;
     private int amountRemaining;
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.row);
-        hash = 41 * hash + Objects.hashCode(this.column);
-        hash = 41 * hash + Objects.hashCode(this.visited);
-        hash = 41 * hash + this.amountRemaining;
+        hash = 37 * hash + this.row;
+        hash = 37 * hash + this.column;
+        hash = 37 * hash + this.amountRemaining;
         return hash;
     }
 
@@ -39,13 +37,10 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (!Objects.equals(this.row, other.row)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (!Objects.equals(this.column, other.column)) {
-            return false;
-        }
-        if (!Objects.equals(this.visited, other.visited)) {
+        if (this.column != other.column) {
             return false;
         }
         if (this.amountRemaining != other.amountRemaining) {
@@ -56,34 +51,26 @@ public class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", amountRemaining=" + amountRemaining + '}';
     }
 
     public Location() {
     }
 
-    public String getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(String row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public String getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(String column) {
+    public void setColumn(int column) {
         this.column = column;
-    }
-
-    public String getVisited() {
-        return visited;
-    }
-
-    public void setVisited(String visited) {
-        this.visited = visited;
     }
 
     public int getAmountRemaining() {
@@ -94,6 +81,4 @@ public class Location implements Serializable{
         this.amountRemaining = amountRemaining;
     }
 
-    }
-    
-
+}

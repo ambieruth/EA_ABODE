@@ -16,8 +16,6 @@ public class SupplyStore implements Serializable {
     
     //class instance variables
     private String description;
-    private double travelTime;
-    private String blocked;
     private String symbol;
     private double noOfItems;
 
@@ -25,8 +23,6 @@ public class SupplyStore implements Serializable {
     public int hashCode() {
         int hash = 7;
         hash = 71 * hash + Objects.hashCode(this.description);
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 71 * hash + Objects.hashCode(this.blocked);
         hash = 71 * hash + Objects.hashCode(this.symbol);
         hash = 71 * hash + (int) (Double.doubleToLongBits(this.noOfItems) ^ (Double.doubleToLongBits(this.noOfItems) >>> 32));
         return hash;
@@ -44,12 +40,6 @@ public class SupplyStore implements Serializable {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.travelTime) != Double.doubleToLongBits(other.travelTime)) {
-            return false;
-        }
-        if (!Objects.equals(this.blocked, other.blocked)) {
-            return false;
-        }
         if (!Objects.equals(this.symbol, other.symbol)) {
             return false;
         }
@@ -61,7 +51,7 @@ public class SupplyStore implements Serializable {
 
     @Override
     public String toString() {
-        return "SupplyStore{" + "description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", symbol=" + symbol + ", noOfItems=" + noOfItems + '}';
+        return "SupplyStore{" + "description=" + description + ", symbol=" + symbol + ", noOfItems=" + noOfItems + '}';
     }
 
     public SupplyStore() {
@@ -73,22 +63,6 @@ public class SupplyStore implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public double getTravelTime() {
-        return travelTime;
-    }
-
-    public void setTravelTime(double travelTime) {
-        this.travelTime = travelTime;
-    }
-
-    public String getBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(String blocked) {
-        this.blocked = blocked;
     }
 
     public String getSymbol() {
@@ -106,6 +80,5 @@ public class SupplyStore implements Serializable {
     public void setNoOfItems(double noOfItems) {
         this.noOfItems = noOfItems;
     }
-    
     
 }
