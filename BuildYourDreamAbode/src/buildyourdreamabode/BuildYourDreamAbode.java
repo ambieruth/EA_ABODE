@@ -32,7 +32,6 @@ public class BuildYourDreamAbode {
         Player playerOne= new Player();
         
         playerOne.setName("Joe Smith");
-        playerOne.setBestTime(12.00);
         
         String playerInfo=playerOne.toString();
         System.out.println(playerInfo);
@@ -98,8 +97,8 @@ public class BuildYourDreamAbode {
         
         Beds bed = new Beds ();
         
-        bed.setWidth(Double.NaN);
-        bed.setLength(Double.NaN);
+        bed.setWidth(5.0);
+        bed.setLength(5.0);
         
         String bedInfo=bed.toString();
         System.out.println(bedInfo);
@@ -107,15 +106,15 @@ public class BuildYourDreamAbode {
         Paint paint = new Paint ();
         
         paint.setColor("white");
-        paint.setAmount(Double.NaN);
+        paint.setAmount(5.0);
         
         String paintInfo=paint.toString();
         System.out.println(paintInfo);
         
         Couches couch = new Couches ();
         
-        couch.setLength(Double.NaN);
-        couch.setWidth(Double.NaN);
+        couch.setLength(5.0);
+        couch.setWidth(5.0);
         couch.setColor("yellow");
         
         String couchInfo=couch.toString();
