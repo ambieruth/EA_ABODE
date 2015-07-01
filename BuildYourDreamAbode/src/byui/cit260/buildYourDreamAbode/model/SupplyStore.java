@@ -17,14 +17,12 @@ public class SupplyStore implements Serializable {
     //class instance variables
     private String description;
     private String symbol;
-    private double noOfItems;
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.description);
-        hash = 71 * hash + Objects.hashCode(this.symbol);
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.noOfItems) ^ (Double.doubleToLongBits(this.noOfItems) >>> 32));
+        hash = 97 * hash + Objects.hashCode(this.description);
+        hash = 97 * hash + Objects.hashCode(this.symbol);
         return hash;
     }
 
@@ -43,15 +41,12 @@ public class SupplyStore implements Serializable {
         if (!Objects.equals(this.symbol, other.symbol)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.noOfItems) != Double.doubleToLongBits(other.noOfItems)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "SupplyStore{" + "description=" + description + ", symbol=" + symbol + ", noOfItems=" + noOfItems + '}';
+        return "SupplyStore{" + "description=" + description + ", symbol=" + symbol + '}';
     }
 
     public SupplyStore() {
@@ -73,12 +68,5 @@ public class SupplyStore implements Serializable {
         this.symbol = symbol;
     }
 
-    public double getNoOfItems() {
-        return noOfItems;
-    }
-
-    public void setNoOfItems(double noOfItems) {
-        this.noOfItems = noOfItems;
-    }
     
 }

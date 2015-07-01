@@ -16,15 +16,13 @@ public class Designer implements Serializable{
     
     //class instance variables
     private String name;
-    private String description;
     private String coordinates;
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 31 * hash + Objects.hashCode(this.name);
-        hash = 31 * hash + Objects.hashCode(this.description);
-        hash = 31 * hash + Objects.hashCode(this.coordinates);
+        hash = 41 * hash + Objects.hashCode(this.name);
+        hash = 41 * hash + Objects.hashCode(this.coordinates);
         return hash;
     }
 
@@ -40,9 +38,6 @@ public class Designer implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
         if (!Objects.equals(this.coordinates, other.coordinates)) {
             return false;
         }
@@ -51,7 +46,7 @@ public class Designer implements Serializable{
 
     @Override
     public String toString() {
-        return "Designer{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
+        return "Designer{" + "name=" + name + ", coordinates=" + coordinates + '}';
     }
 
     public Designer() {
@@ -65,14 +60,6 @@ public class Designer implements Serializable{
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getCoordinates() {
         return coordinates;
     }
@@ -80,5 +67,5 @@ public class Designer implements Serializable{
     public void setCoordinates(String coordinates) {
         this.coordinates = coordinates;
     }
-    
+
 }
