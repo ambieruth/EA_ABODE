@@ -34,11 +34,13 @@ public class GameMenuView extends View {
                 this.designerInventory();
                 break;
             case 'Q': // Exit the program
-                return;
+                return false;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-        }    }
+        } 
+        return true;
+    }
 
     private void map() {
 System.out.println("\n*** map stub function called***");    
@@ -46,5 +48,6 @@ System.out.println("\n*** map stub function called***");
 
     private void designerInventory() {
 System.out.println("\n*** designerInventory stub function called***");    }
+
     
 }

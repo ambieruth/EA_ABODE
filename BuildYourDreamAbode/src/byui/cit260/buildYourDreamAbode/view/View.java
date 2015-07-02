@@ -20,7 +20,7 @@ public abstract class View implements ViewInterface {
             }
     
     @Override        
-    public void displayMenu() {
+    public void display() {
         char selection = ' ';
         do{
             
