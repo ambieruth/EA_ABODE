@@ -23,4 +23,9 @@ public class Game {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    private static int bedrooms; 
+    public static int getNumberOfBedrooms() {
+        return bedrooms;
+    }
+    
 }

@@ -5,21 +5,24 @@
  */
 package byui.cit260.buildYourDreamAbode.control;
 
+import byui.cit260.buildYourDreamAbode.model.Game;
+
 /**
  *
  * @author ElisaHutchings
  */
 public class StoreInventoryControl {
     
-    public int calcBed(int inventory, int needed ) {
+    public int calcBed(int inventory, int want ) {
         
-        if (needed > inventory) {
+        if (want > inventory) {
             return -1;
         }
         
-        if (needed < inventory) {
-            return -1;
-        }
+        if (want == new Game().getNumberOfBedrooms())
+           return want; 
+        else 
+            return -1; 
        
         
         
