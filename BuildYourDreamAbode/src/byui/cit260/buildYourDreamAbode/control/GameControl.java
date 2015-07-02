@@ -13,6 +13,25 @@ import byui.cit260.buildYourDreamAbode.model.Designer;
  * @author ElisaHutchings
  */
 public class GameControl {
+    
+    public static void createNewGame(Designer designer) {
+        
+        Game game = new Game(); //create new game
+        BuildYourDreamAbode.setCurrentGame(game); //save in BuildYourDreamAbode
+        
+        game.setDesigner(designer); //save player in game
+        
+        //create the inventory list and save in the game
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        Map map = MapControl.createMap(); //create and initialize new map
+        game.setMap(map); //save map in game
+        
+        //move actors to starting position in the map
+        MapControl.moveActorsToStartingLocation(map);
+    
+    public static void startNewGame()
 
     public static Designer createDesigner(String name) {
         

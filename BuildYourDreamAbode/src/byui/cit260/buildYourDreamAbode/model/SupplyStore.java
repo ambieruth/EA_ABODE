@@ -17,6 +17,8 @@ public class SupplyStore implements Serializable {
     //class instance variables
     private String description;
     private String symbol;
+    
+    private InventoryItem[] inventory;
 
     @Override
     public int hashCode() {
@@ -66,6 +68,14 @@ public class SupplyStore implements Serializable {
 
     public void setSymbol(String symbol) {
         this.symbol = symbol;
+    }
+
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
     }
 
     

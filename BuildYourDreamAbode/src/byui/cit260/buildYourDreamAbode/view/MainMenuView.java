@@ -6,15 +6,15 @@
 package byui.cit260.buildYourDreamAbode.view;
 
 import byui.cit260.buildYourDreamAbode.control.GameControl;
-import java.util.Scanner;
 
 /**
  *
  * @author ElisaHutchings
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private final String MENU = "\n"
+    public MainMenuView() { 
+            super("\n"
             +"\n----------------------------------------"
             +"\n| Main Menu                            |"
             +"\n----------------------------------------"
@@ -22,53 +22,12 @@ public class MainMenuView {
             +"\nH - Get help on how to play the game"
             +"\nS - Save game"
             +"\nE - Exit"
-            +"\n----------------------------------------";
-
-    void displayMenu() {
-        
-        char selection = ' ';
-        do{
-            
-            System.out.println(MENU); //display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection); //do action based on selection
-        
-        } while (selection != 'E'); // an selection is not "Exit"
-
+            +"\n----------------------------------------");
     }
-
-    private String getInput() {
+    @Override
+    public boolean doAction(Object obj) {
         
-        boolean valid = false; //indicates of the name has been retrieved
-        String getInput = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
-        while(!valid) { //while a valid name has not been retrieved
-            
-            //prompt for the designer's name
-            System.out.println("Enter your choice below:");
-            
-            //get the name from the keyboard and trim off the blanks
-            getInput = keyboard.nextLine();
-            getInput = getInput.trim();
-            
-            //if the name is invalid)less than two characters in length)
-            if (getInput.length() > 1) {
-                System.out.println("Invalid choice - too many characters");
-                continue; //and repeat again
-                
-            }
-            break; //out of the (exit) the repetition
-        }
-        
-        return getInput; //return the name
-
-    }
-
-    private void doAction(char choice) {
+        char choice = (char) obj;
         
         switch (choice) {
             case 'N': //create and start a new game
@@ -88,7 +47,7 @@ public class MainMenuView {
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-        }
+        }       
     }
 
     private void startNewGame() {     

@@ -16,6 +16,9 @@ public class Map implements Serializable{
     //class instance variables
     private int rowCount;
     private int columnCount;
+    
+    private Map map;
+    private HouseSite houseSite;
 
     @Override
     public int hashCode() {
@@ -65,6 +68,22 @@ public class Map implements Serializable{
 
     public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public HouseSite getHouseSite() {
+        return houseSite;
+    }
+
+    public void setHouseSite(HouseSite houseSite) {
+        this.houseSite = houseSite;
     }
     
 }

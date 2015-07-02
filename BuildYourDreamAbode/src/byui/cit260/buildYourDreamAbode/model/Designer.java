@@ -17,6 +17,8 @@ public class Designer implements Serializable{
     //class instance variables
     private String name;
     private String coordinates;
+    
+    private DesignerInventory designerInventory;
 
     @Override
     public int hashCode() {
@@ -68,4 +70,12 @@ public class Designer implements Serializable{
         this.coordinates = coordinates;
     }
 
+    public DesignerInventory getDesignerInventory() {
+        return designerInventory;
+    }
+
+    public void setDesignerInventory(DesignerInventory designerInventory) {
+        this.designerInventory = designerInventory;
+    }
+    
 }

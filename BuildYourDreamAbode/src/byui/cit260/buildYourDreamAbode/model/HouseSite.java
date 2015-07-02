@@ -17,6 +17,8 @@ public class HouseSite implements Serializable{
     //class instance variables
     private String description;
     private String symbol;
+    
+    private House house;
 
     @Override
     public int hashCode() {
@@ -66,6 +68,14 @@ public class HouseSite implements Serializable{
 
     public void setSymbol(String symbol) {
         this.symbol = symbol;
+    }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
     }
     
 }

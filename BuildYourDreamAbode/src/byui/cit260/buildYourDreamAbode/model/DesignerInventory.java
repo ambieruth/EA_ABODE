@@ -11,99 +11,20 @@ import java.io.Serializable;
  *
  * @author ElisaHutchings
  */
-public class DesignerInventory implements Serializable{
+public enum DesignerInventory implements Serializable{
     
-    private int beds;
-    private int tables;
-    private int chairs;
-    private int couches;
-    private int paint;
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + this.beds;
-        hash = 79 * hash + this.tables;
-        hash = 79 * hash + this.chairs;
-        hash = 79 * hash + this.couches;
-        hash = 79 * hash + this.paint;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final DesignerInventory other = (DesignerInventory) obj;
-        if (this.beds != other.beds) {
-            return false;
-        }
-        if (this.tables != other.tables) {
-            return false;
-        }
-        if (this.chairs != other.chairs) {
-            return false;
-        }
-        if (this.couches != other.couches) {
-            return false;
-        }
-        if (this.paint != other.paint) {
-            return false;
-        }
-        return true;
-    }
+   Beds("Enjoy a good nights sleep."),
+    Tables("You ahve to ahve something to eat on."),
+    Chairs("Eating standing up makes no sense."),
+    Couches("A necessary item for any living room."),
+    Paint("White is just too boring.");
 
     @Override
     public String toString() {
         return "DesignerInventory{" + "beds=" + beds + ", tables=" + tables + ", chairs=" + chairs + ", couches=" + couches + ", paint=" + paint + '}';
     }
 
-    public DesignerInventory() {
+    DesignerInventory() {
     }
-
-    public int getBeds() {
-        return beds;
-    }
-
-    public void setBeds(int beds) {
-        this.beds = beds;
-    }
-
-    public int getTables() {
-        return tables;
-    }
-
-    public void setTables(int tables) {
-        this.tables = tables;
-    }
-
-    public int getChairs() {
-        return chairs;
-    }
-
-    public void setChairs(int chairs) {
-        this.chairs = chairs;
-    }
-
-    public int getCouches() {
-        return couches;
-    }
-
-    public void setCouches(int couches) {
-        this.couches = couches;
-    }
-
-    public int getPaint() {
-        return paint;
-    }
-
-    public void setPaint(int paint) {
-        this.paint = paint;
-    }
-
-    
+   
 }
