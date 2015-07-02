@@ -3,21 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.buildYourDreamAbode.control;
-
-import byui.cit260.buildYourDreamAbode.model.Map;
+package byui.cit260.buildYourDreamAbode.model;
 
 /**
  *
  * @author ElisaHutchings
  */
-public class MapControl {
+public class Game {
 
-    static Map createMap() {
+    public void setDesigner(Designer designer) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void moveActorsToStartingLocation(Map map) {
+    public void setInventory(InventoryItem[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMap(Map map) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

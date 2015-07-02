@@ -19,20 +19,15 @@ public enum InventoryItem implements Serializable {
     Chairs("Eating standing up makes no sense."),
     Couches("A necessary item for any living room."),
     Paint("White is just too boring.");
-    
-   private final int requiredAmount;
+    private String description;
 
     @Override
     public String toString() {
-        return "InventoryItem{" + "beds=" + beds + ", tables=" + tables + ", chairs=" + chairs + ", couches=" + couches + ", paint=" + paint + ", requiredAmount=" + requiredAmount + '}';
+        return description;
     }
 
-    InventoryItem(int) {
-        this.int = int;
-    }
-
-    public int getRequiredAmount() {
-        return requiredAmount;
+    InventoryItem(String description) {
+        description = description;
     }
     
 }

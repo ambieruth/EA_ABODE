@@ -18,7 +18,7 @@ public class Designer implements Serializable{
     private String name;
     private String coordinates;
     
-    private DesignerInventory designerInventory;
+    private InventoryItem[] designerInventory;
 
     @Override
     public int hashCode() {
@@ -70,11 +70,11 @@ public class Designer implements Serializable{
         this.coordinates = coordinates;
     }
 
-    public DesignerInventory getDesignerInventory() {
+    public InventoryItem[] getDesignerInventory() {
         return designerInventory;
     }
 
-    public void setDesignerInventory(DesignerInventory designerInventory) {
+    public void setDesignerInventory(InventoryItem[] designerInventory) {
         this.designerInventory = designerInventory;
     }
     

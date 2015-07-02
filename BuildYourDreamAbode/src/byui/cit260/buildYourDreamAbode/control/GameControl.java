@@ -7,6 +7,9 @@ package byui.cit260.buildYourDreamAbode.control;
 
 import buildyourdreamabode.BuildYourDreamAbode;
 import byui.cit260.buildYourDreamAbode.model.Designer;
+import byui.cit260.buildYourDreamAbode.model.Game;
+import byui.cit260.buildYourDreamAbode.model.InventoryItem;
+import byui.cit260.buildYourDreamAbode.model.Map;
 
 /**
  *
@@ -30,8 +33,9 @@ public class GameControl {
         
         //move actors to starting position in the map
         MapControl.moveActorsToStartingLocation(map);
-    
-    public static void startNewGame()
+    }
+    public static void startNewGame() {
+    }
 
     public static Designer createDesigner(String name) {
         
@@ -45,6 +49,10 @@ public class GameControl {
         BuildYourDreamAbode.setDesigner(designer); //save the player
         
         return designer;
+    }
+
+    private static InventoryItem[] createInventoryList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

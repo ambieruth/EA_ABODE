@@ -13,11 +13,11 @@ public class StoreInventoryControl {
     
     public int calcBed(int inventory, int needed ) {
         
-        if (needed > numberOfBedrooms) {
+        if (needed > inventory) {
             return -1;
         }
         
-        if (needed < numberOfBedrooms) {
+        if (needed < inventory) {
             return -1;
         }
        

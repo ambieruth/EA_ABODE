@@ -7,6 +7,7 @@ package buildyourdreamabode;
 
 import byui.cit260.buildYourDreamAbode.control.GameControl;
 import byui.cit260.buildYourDreamAbode.model.Designer;
+import byui.cit260.buildYourDreamAbode.model.Game;
 import byui.cit260.buildYourDreamAbode.model.House;
 import byui.cit260.buildYourDreamAbode.model.HouseSite;
 import byui.cit260.buildYourDreamAbode.model.InventoryItem;
@@ -94,5 +95,9 @@ public static GameControl getCurrentGame() {
 
     public static void setDesigner(Designer designer) {
         BuildYourDreamAbode.designer = designer;
+    }
+
+    public static void setCurrentGame(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
