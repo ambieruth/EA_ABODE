@@ -25,60 +25,72 @@ public class BuildYourDreamAbode {
     private static Designer designer = null;
     
     public static void main(String[] args) {
-        //create StartProgramView and start the program
+        
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+        try{
+            //create StartProgramView and start the program
+            startProgramView.startProgram();
+        }catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
+    }
+
+    public static void setDesigner(Designer designer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
         Designer designerOne = new Designer();
         
-        designerOne.setName("Mark Jacobs");
-        designerOne.setCoordinates("You are currently at the House Site.");
+        //designerOne.setName("Mark Jacobs");
+        //designerOne.setCoordinates("You are currently at the House Site.");
         
-        String designerInfo = designerOne.toString();
-        System.out.println(designerInfo);
+        //String designerInfo = designerOne.toString();
+        //System.out.println(designerInfo);
         
         House houseOne = new House ();
         
-        houseOne.setDescription("Your new home is now built. Now it is time to furnish it.");
-        houseOne.setNumberOfBedrooms(5);
-        houseOne.setNumberOfBathrooms(5.5);
+       // houseOne.setDescription("Your new home is now built. Now it is time to furnish it.");
+       // houseOne.setNumberOfBedrooms(5);
+        //houseOne.setNumberOfBathrooms(5.5);
         
-        String houseInfo=houseOne.toString();
-        System.out.println(houseInfo);
+        //String houseInfo=houseOne.toString();
+        //System.out.println(houseInfo);
         
         SupplyStore supplyStore = new SupplyStore();
         
-        supplyStore.setDescription("This is where you will buy all your supplies.");
+        //supplyStore.setDescription("This is where you will buy all your supplies.");
         
-        String supplyStoreInfo = supplyStore.toString();
-        System.out.println(supplyStoreInfo);
+        //String supplyStoreInfo = supplyStore.toString();
+        //System.out.println(supplyStoreInfo);
         
         HouseSite houseSite = new HouseSite();
         
-        houseSite.setDescription("Welcome to the house site.");
+        //houseSite.setDescription("Welcome to the house site.");
         
-        String houseSiteInfo = houseSite.toString();
-        System.out.println(houseSiteInfo);
+        //String houseSiteInfo = houseSite.toString();
+        //System.out.println(houseSiteInfo);
         
         Map mapOne = new Map();
         
-        mapOne.setRowCount(4);
-        mapOne.setColumnCount(4);
+       // mapOne.setRowCount(4);
+       // mapOne.setColumnCount(4);
         
-        String mapInfo = mapOne.toString();
-        System.out.println(mapInfo);
+        //String mapInfo = mapOne.toString();
+        //System.out.println(mapInfo);
         
-        InventoryItem inventory= new InventoryItem();
+        //InventoryItem inventory= new InventoryItem();
         
-        inventory.setBeds(5);
-        inventory.setRequiredAmount(5);
-        inventory.setTables(2);
-        inventory.setCouches(3);
-        inventory.setChairs(12);
-        inventory.setPaint(10);
+        //inventory.setBeds(5);
+       // inventory.setRequiredAmount(5);
+        //inventory.setTables(2);
+        //inventory.setCouches(3);
+        //inventory.setChairs(12);
+        //inventory.setPaint(10);
         
-        String inventoryInfo=inventory.toString();
-        System.out.println(inventoryInfo);
+        //String inventoryInfo=inventory.toString();
+        //System.out.println(inventoryInfo);
         
     }
 public static GameControl getCurrentGame() {
@@ -100,4 +112,3 @@ public static GameControl getCurrentGame() {
     public static void setCurrentGame(Game game) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}

@@ -5,6 +5,7 @@
  */
 package byui.cit260.buildYourDreamAbode.view;
 
+import byui.cit260.buildYourDreamAbode.model.Designer;
 import java.util.Scanner;
 
 /**
@@ -28,6 +29,7 @@ public class MapView extends View{
 
     @Override
     public boolean doAction(Object obj) {
+        Actor actor;
         
         char choice = (char) obj;
         
@@ -39,12 +41,23 @@ public class MapView extends View{
                 this.supplyStore();
                 break;
             case 'Q': // Exit the map
-                return;
+                return false;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
     
 }
+       return true;
+       
+       //move actor to specified location
+       try{
+       MapControl.moveActorToLocation(actor, coordinates);
+       }
+       catch (MapControlException me) {
+           System.out.println(me.getMessage());
+       }
+       
+       
     }
     private void house() {
 System.out.println("\n*** house stub function called***");    

@@ -46,11 +46,12 @@ public class StoreView extends View{
                 this.getPaint();
                 break;
             case 'E': // Exit the program
-                return;
+                return false;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        return true;
 }
 
     private void getBeds() {

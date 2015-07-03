@@ -5,6 +5,7 @@
  */
 package byui.cit260.buildYourDreamAbode.view;
 
+import buildyourdreamabode.BuildYourDreamAbode;
 import byui.cit260.buildYourDreamAbode.control.GameControl;
 
 /**
@@ -43,11 +44,12 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
             case 'E': // Exit the program
-                return;
+                return false;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }       
+        return true;
     }
 
     private void startNewGame() {     
@@ -56,7 +58,7 @@ public class MainMenuView extends View {
         
         //disaply the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -65,7 +67,7 @@ public class MainMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 
     private void saveGame() {
