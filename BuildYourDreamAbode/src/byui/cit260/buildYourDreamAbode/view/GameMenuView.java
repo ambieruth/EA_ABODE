@@ -33,6 +33,9 @@ public class GameMenuView extends View {
             case 'I': //See Inventory
                 this.designerInventory();
                 break;
+            case 'R': //Print Report
+                this.report();
+                break;
             case 'Q': // Exit the program
                 return false;
             default:
@@ -49,5 +52,9 @@ this.console.println("\n*** map stub function called***");
     private void designerInventory() {
 this.console.println("\n*** designerInventory stub function called***");    }
 
+    private void report() {
+        ReportFile reportFile = new ReportFile();
+        reportFile.display();
+        
     
 }

@@ -13,6 +13,7 @@ public class ErrorView {
     
     private static final PrintWriter errorFile = BuildYourDreamAbode.getOutFile();
     private static final PrintWriter logFile = BuildYourDreamAbode.getLogFile();
+    private static final PrintWriter reportFile = BuildYourDreamAbode.getReportFile();
     
     public static void display(String className, String errorMessage) {
         
@@ -23,6 +24,9 @@ public class ErrorView {
         
         //log error
         logFile.println(className + " - " + errorMessage);
+        
+        //report error
+        logFile.println(className + "-" + errorMessage);
     }
     
 }

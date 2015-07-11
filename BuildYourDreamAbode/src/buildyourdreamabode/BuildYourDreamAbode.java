@@ -28,6 +28,8 @@ public class BuildYourDreamAbode {
 
     private static PrintWriter logFile = null;
     
+    private static PrintWriter reportFile = null;
+
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
@@ -41,6 +43,10 @@ public class BuildYourDreamAbode {
             //open log file
             String filePath = "log.txt";
             BuildYourDreamAbode.logFile = new PrintWriter(filePath);
+            
+            //Report file
+            String filePath = "report.txt";
+            BuildYourDreamAbode.reportFile = new PrintWriter(filepath);
             
             //create StartProgramView and start the program
             startProgramView.startProgram();
@@ -60,6 +66,8 @@ public class BuildYourDreamAbode {
                 
                 if(BuildYourDreamAbode.logFile != null)
                     BuildYourDreamAbode.logFile.close();
+                if(BuildYourDreamAbode.reportFile != null)
+                    BuildYourDreamAbode.reportFile.close();
         } catch (IOException ex) {
             System.out.println("Error closing files");
             return;
@@ -185,3 +193,11 @@ return logFile;
 public static void setLogFile(PrintWriter logFile) {
 BuildYourDreamAbode.logFile = logFile;
 }
+
+public static PrintWriter getReportFile() {
+        return reportFile;
+    }
+
+    public static void setReportFile(PrintWriter reportFile) {
+        BuildYourDreamAbode.reportFile = reportFile;
+    }

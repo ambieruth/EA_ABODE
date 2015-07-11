@@ -15,6 +15,7 @@ public abstract class View implements ViewInterface {
     
     protected final BufferedReader keyboard = BuildYourDreamAbode.getInFile();
     protected final PrintWriter console = BuildYourDreamAbode.getOutFile();
+    protected final PrintWriter console = BuildYourDreamAbode.getReportFile();
     
     public View(String promptMessage){
         this.promptMessage = promptMessage;
