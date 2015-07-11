@@ -48,7 +48,7 @@ public class StoreView extends View{
             case 'E': // Exit the program
                 return false;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"Error reading input: "+ e.getMessage());
                 break;
         }
         return true;

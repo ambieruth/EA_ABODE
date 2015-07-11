@@ -18,7 +18,9 @@ public class House implements Serializable {
     private String description;
     private int numberOfBedrooms;
     private double numberOfBathrooms;
-
+    
+    private InventoryItem[] inventory;
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -80,6 +82,13 @@ public class House implements Serializable {
     public void setNumberOfBathrooms(double numberOfBathrooms) {
         this.numberOfBathrooms = numberOfBathrooms;
     }
+    
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
 
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
     
 }

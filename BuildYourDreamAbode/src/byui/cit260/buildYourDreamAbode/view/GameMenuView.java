@@ -36,18 +36,18 @@ public class GameMenuView extends View {
             case 'Q': // Exit the program
                 return false;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.disaply(this,getClass().getName(), "Error reading input" + e.getMessage());
                 break;
         } 
         return true;
     }
 
     private void map() {
-System.out.println("\n*** map stub function called***");    
+this.console.println("\n*** map stub function called***");    
         }
 
     private void designerInventory() {
-System.out.println("\n*** designerInventory stub function called***");    }
+this.console.println("\n*** designerInventory stub function called***");    }
 
     
 }

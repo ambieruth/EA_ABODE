@@ -5,6 +5,7 @@
  */
 package byui.cit260.buildYourDreamAbode.control;
 
+import byui.cit260.buildYourDreamAbode.model.Designer;
 import byui.cit260.buildYourDreamAbode.model.Map;
 
 /**
@@ -34,11 +35,12 @@ public class MapControl {
     public static int moveActorsToStartingLocation(Map map) {
         throws MapControlException {
         //for every designer
-        Actor[] actors = Actor.values();
+        Designer[] designer = Designer.values();
         
-        for (Actor actor : actors) {
-            Point coordinates = actor.getCoordinates();
-            int returnValue = MapControl.moveActorsToStartingLocation(actor, coordiantes);
+        for (Designer designer : designers) {
+            Point coordinates = designer.getCoordinates();
+            int returnValue = MapControl.moveActorsToStartingLocation(designer, coordinates);
+            
             
         }
         return 0;

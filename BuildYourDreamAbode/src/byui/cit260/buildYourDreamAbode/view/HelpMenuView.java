@@ -32,12 +32,12 @@ public class HelpMenuView extends View{
             case 'Q': // Exit the program
                 return false;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
                 break;
     
 }
         return true;
     }
     private void goal() {
-System.out.println("\n*** goal stub function called***");    }
+this.console.println("\n*** goal stub function called***");    }
 }

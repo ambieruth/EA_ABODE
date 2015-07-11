@@ -19,7 +19,8 @@ public class MainMenuView extends View {
             +"\n----------------------------------------"
             +"\n| Main Menu                            |"
             +"\n----------------------------------------"
-            +"\nG - Start Game"
+            +"\nN - Start Game"
+            +"\nG - Get and start saved game"        
             +"\nH - Get help on how to play the game"
             +"\nS - Save game"
             +"\nE - Exit"
@@ -34,7 +35,7 @@ public class MainMenuView extends View {
             case 'N': //create and start a new game
                 this.startNewGame();
                 break;
-            case 'G': //get and start and existing game
+            case 'G': //get and start an existing game
                 this.startExistingGame();
                 break;
             case 'H': //display the help menu
@@ -46,7 +47,7 @@ public class MainMenuView extends View {
             case 'E': // Exit the program
                 return false;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "Error reading input: "+ e.getMessage());
                 break;
         }       
         return true;
@@ -62,7 +63,7 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called***");
+        this.console.println("*** startExistingGame function called***");
     }
 
     private void displayHelpMenu() {
@@ -71,7 +72,7 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called***");
+        this.console.println("*** saveGame function called***");
     }
     
 }

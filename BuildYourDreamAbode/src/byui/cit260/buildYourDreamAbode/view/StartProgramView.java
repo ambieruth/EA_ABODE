@@ -42,37 +42,36 @@ public class StartProgramView {
     }
 
     private void displayBanner() {
-        System.out.println("\n\n*********************************************");
+        this.console.println("\n\n*********************************************");
         
-        System.out.println("*                                         *"
+        this.console.println("*                                         *"
                 + "\n* This is the game of Build Your Dream Abode     *"
                 + "\n* In this game you will be a designer and        *"
                 + "\n* furnish your new home.                         *");
         
-        System.out.println("*                                         *"
+        this.console.println("*                                         *"
                 + "\n* Make sure to have fun designing your home!     *"
                 + "\n*                                                *");
         
-        System.out.println("*************************************************");
+        this.console.println("*************************************************");
     }
 
     private String getDesignersName() {
         boolean valid = false; //indicates of the name has been retrieved
         String designersName = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
+               
         while(!valid) { //while a valid name has not been retrieved
             
             //prompt for the designer's name
-            System.out.println("Enter your name below:");
+            this.console.println("Enter your name below:");
             
             //get the name from the keyboard and trim off the blanks
-            designersName = keyboard.nextLine();
+            designersName = this.keyboard.readLine();
             designersName = designersName.trim();
             
             //if the name is invalid)less than two characters in length)
             if (designersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank or less than two characters");
+                ErrorView.display(this.getClass().getName(), "Error reading input: "+ e.getMessage());
                 continue; //and repeat again
                 
             }
@@ -83,10 +82,10 @@ public class StartProgramView {
     }
 
     public void displayWelcomMessage(Designer designer) {
-        System.out.println("\n\n=============================================");
-        System.out.println("\tWelcome to the game " + designer.getName());
-        System.out.println("\tWe hope you have a lot of fun!");
-        System.out.println("=================================================");
+        this.console.println("\n\n=============================================");
+        this.console.println("\tWelcome to the game " + designer.getName());
+        this.console.println("\tWe hope you have a lot of fun!");
+        this.console.println("=================================================");
 
     }
 

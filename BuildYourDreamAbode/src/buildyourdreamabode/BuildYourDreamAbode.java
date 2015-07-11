@@ -7,13 +7,12 @@ package buildyourdreamabode;
 
 import byui.cit260.buildYourDreamAbode.control.GameControl;
 import byui.cit260.buildYourDreamAbode.model.Designer;
-import byui.cit260.buildYourDreamAbode.model.Game;
 import byui.cit260.buildYourDreamAbode.model.House;
 import byui.cit260.buildYourDreamAbode.model.HouseSite;
-import byui.cit260.buildYourDreamAbode.model.InventoryItem;
 import byui.cit260.buildYourDreamAbode.model.Map;
 import byui.cit260.buildYourDreamAbode.model.SupplyStore;
 import byui.cit260.buildYourDreamAbode.view.StartProgramView;
+import java.util.logging.Level;
 
 /**
  *
@@ -24,17 +23,67 @@ public class BuildYourDreamAbode {
     private static GameControl currentGame = null;
     private static Designer designer = null;
     
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+
+    private static PrintWriter logFile = null;
+    
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
         try{
+            
+            //open character stream files for end user input and output
+            BuildYourDreamAbode.inFile = new BufferedReader(new InputStreamReader(System.in));
+            
+            BuildYourDreamAbode.outFile = new PrintWriter(System.out, true);
+            
+            //open log file
+            String filePath = "log.txt";
+            BuildYourDreamAbode.logFile = new PrintWriter(filePath);
+            
             //create StartProgramView and start the program
             startProgramView.startProgram();
         }catch (Throwable te) {
-            System.out.println(te.getMessage());
+            this.console.println(te.getMessage());
             te.printStackTrace();
             startProgramView.display();
         }
+        
+        finally {
+            try{
+                if (BuildYourDreamAbode.inFile != null)
+                    BuildYourDreamAbode.inFile.close();
+                
+                if (BuildYourDreamAbode.outFile != null)
+                    BuildYourDreamAbode.outFile.close();
+                
+                if(BuildYourDreamAbode.logFile != null)
+                    BuildYourDreamAbode.logFile.close();
+        } catch (IOException ex) {
+            System.out.println("Error closing files");
+            return;
+        }
+    }
+    }
+    
+    private void startSavedGame(){
+        
+        //prompt for and get the name of the file to save the game in
+        System.out.println("\n\nEnter the file path where the game " + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            //start a saved game
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     public static void setDesigner(Designer designer) {
@@ -112,3 +161,27 @@ public static GameControl getCurrentGame() {
     public static void setCurrentGame(Game game) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        BuildYourDreamAbode.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        BuildYourDreamAbode.inFile = inFile;
+    }
+
+public static PrintWriter getLogFile() {
+return logFile;
+}
+
+public static void setLogFile(PrintWriter logFile) {
+BuildYourDreamAbode.logFile = logFile;
+}

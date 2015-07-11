@@ -19,6 +19,7 @@ public enum InventoryItem implements Serializable {
     Chairs("Eating standing up makes no sense."),
     Couches("A necessary item for any living room."),
     Paint("White is just too boring.");
+    
     private String description;
 
     @Override

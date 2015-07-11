@@ -29,7 +29,7 @@ public class MapView extends View{
 
     @Override
     public boolean doAction(Object obj) {
-        Actor actor;
+        Designer designer;
         
         char choice = (char) obj;
         
@@ -43,7 +43,7 @@ public class MapView extends View{
             case 'Q': // Exit the map
                 return false;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "Error reading input: "+ e.getMessage());
                 break;
     
 }
@@ -51,16 +51,16 @@ public class MapView extends View{
        
        //move actor to specified location
        try{
-       MapControl.moveActorToLocation(actor, coordinates);
+       MapControl.moveActorToLocation(designer, coordinates);
        }
        catch (MapControlException me) {
-           System.out.println(me.getMessage());
+           this.console.println(me.getMessage());
        }
        
        
     }
     private void house() {
-System.out.println("\n*** house stub function called***");    
+this.console.println("\n*** house stub function called***");    
     }
     
     private void supplyStore() {
