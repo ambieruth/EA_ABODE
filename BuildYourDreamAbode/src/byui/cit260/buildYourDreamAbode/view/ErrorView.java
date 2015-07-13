@@ -5,6 +5,9 @@
  */
 package byui.cit260.buildYourDreamAbode.view;
 
+import buildyourdreamabode.BuildYourDreamAbode;
+import java.io.PrintWriter;
+
 /**
  *
  * @author ElisaHutchings

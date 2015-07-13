@@ -7,7 +7,6 @@ package byui.cit260.buildYourDreamAbode.view;
 
 import byui.cit260.buildYourDreamAbode.control.GameControl;
 import byui.cit260.buildYourDreamAbode.model.Designer;
-import java.util.Scanner;
 
 /**
  *

@@ -13,19 +13,20 @@ public class GameMenuView extends View {
 
     public GameMenuView() {
         super("\n"
-            +"\n----------------------------------------"
-            +"\n| Game Menu                            |"
-            +"\n----------------------------------------"
-            +"\nM - Map"
-            +"\nI - Your Inventory"
-            +"\nQ - Quit"
-            +"\n----------------------------------------");
+                + "\n----------------------------------------"
+                + "\n| Game Menu                            |"
+                + "\n----------------------------------------"
+                + "\nM - Map"
+                + "\nI - Your Inventory"
+                + "\nQ - Quit"
+                + "\n----------------------------------------");
     }
+
     @Override
     public boolean doAction(Object obj) {
-        
+
         char choice = (char) obj;
-        
+
         switch (choice) {
             case 'M': //Go to the map
                 this.map();
@@ -39,22 +40,23 @@ public class GameMenuView extends View {
             case 'Q': // Exit the program
                 return false;
             default:
-                ErrorView.disaply(this,getClass().getName(), "Error reading input" + e.getMessage());
+                ErrorView.disaply(this, getClass().getName(), "Error reading input" + e.getMessage());
                 break;
-        } 
+        }
         return true;
     }
 
     private void map() {
-this.console.println("\n*** map stub function called***");    
-        }
+        this.console.println("\n*** map stub function called***");
+    }
 
     private void designerInventory() {
-this.console.println("\n*** designerInventory stub function called***");    }
+        this.console.println("\n*** designerInventory stub function called***");
+    }
 
     private void report() {
         ReportFile reportFile = new ReportFile();
         reportFile.display();
-        
-    
+
+    }
 }

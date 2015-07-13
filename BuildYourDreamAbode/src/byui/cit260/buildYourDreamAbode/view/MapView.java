@@ -5,8 +5,9 @@
  */
 package byui.cit260.buildYourDreamAbode.view;
 
+import byui.cit260.buildYourDreamAbode.control.MapControl;
+import byui.cit260.buildYourDreamAbode.exceptions.MapControlException;
 import byui.cit260.buildYourDreamAbode.model.Designer;
-import java.util.Scanner;
 
 /**
  *
@@ -56,6 +57,7 @@ public class MapView extends View{
        catch (MapControlException me) {
            this.console.println(me.getMessage());
        }
+       return false;
        
        
     }
