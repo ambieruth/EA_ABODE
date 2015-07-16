@@ -9,35 +9,41 @@ package byui.cit260.buildYourDreamAbode.view;
  *
  * @author ElisaHutchings
  */
-public class HelpMenuView extends View{
+public class HelpMenuView extends View {
+
     public HelpMenuView() {
         super("\n"
-            +"\n----------------------------------------"
-            +"\n| Help Menu                            |"
-            +"\n----------------------------------------"
-            +"\nG - What is the goal of tha game?"
-            +"\nQ - Quit"
-            +"\n----------------------------------------");
+                + "\n----------------------------------------"
+                + "\n| Help Menu                            |"
+                + "\n----------------------------------------"
+                + "\nG - What is the goal of tha game?"
+                + "\nQ - Quit"
+                + "\n----------------------------------------");
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
-        
+
         char choice = (char) obj;
-        
-        switch (choice) {
-            case 'G': //Goal
-                this.goal();
-                break;
-            case 'Q': // Exit the program
-                return false;
-            default:
-                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
-                break;
-    
-}
+        try {
+            switch (choice) {
+                case 'G': //Goal
+                    this.goal();
+                    break;
+                case 'Q': // Exit the program
+                    return false;
+                default:
+
+                    break;
+
+            }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
+        }
         return true;
     }
+
     private void goal() {
-this.console.println("\n*** goal stub function called***");    }
+        this.console.println("\n*** goal stub function called***");
+    }
 }

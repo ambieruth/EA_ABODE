@@ -10,9 +10,12 @@ package byui.cit260.buildYourDreamAbode.model;
  * @author ElisaHutchings
  */
 public class Game {
-
+    Designer designer;
     public void setDesigner(Designer designer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        designer = designer;
+    }
+    public Designer getDesigner() {
+        return designer;
     }
 
     public void setInventory(InventoryItem[] inventoryList) {
@@ -26,6 +29,10 @@ public class Game {
     private static int bedrooms; 
     public static int getNumberOfBedrooms() {
         return bedrooms;
+    }
+
+    public Map getMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

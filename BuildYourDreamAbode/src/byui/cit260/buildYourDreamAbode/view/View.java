@@ -8,7 +8,10 @@ package byui.cit260.buildYourDreamAbode.view;
 import buildyourdreamabode.BuildYourDreamAbode;
 import byui.cit260.buildYourDreamAbode.control.GameControl;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,10 +23,13 @@ public abstract class View implements ViewInterface {
 
     protected final BufferedReader keyboard = BuildYourDreamAbode.getInFile();
     protected final PrintWriter console = BuildYourDreamAbode.getOutFile();
-    protected final PrintWriter console = BuildYourDreamAbode.getReportFile();
+   
 
     public View(String promptMessage) {
         this.promptMessage = promptMessage;
+    }
+    public View(){
+        
     }
 
     @Override
@@ -48,8 +54,9 @@ public abstract class View implements ViewInterface {
         boolean valid = false; //indicates of the name has been retrieved
         String selection = null;
 
-        while (!valid) { //while a valid name has not been retrieved
-
+        while (!valid) { try {
+            //while a valid name has not been retrieved
+            
             //prompt for the designer's name
             this.console.println("Enter your choice below:");
 
@@ -59,11 +66,15 @@ public abstract class View implements ViewInterface {
 
             //if the name is invalid)less than two characters in length)
             if (selection.length() < 1) {
-                ErrorView.disaply(this.getClass().getName(), "Error reading inpute: " + e.getMessage());
+               
                 continue; //and repeat again
 
             }
             break; //out of the (exit) the repetition
+            } catch (IOException ex) {
+                 ErrorView.display(this.getClass().getName(), "Error reading inpute: " + ex.getMessage());
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         return selection; //return the name

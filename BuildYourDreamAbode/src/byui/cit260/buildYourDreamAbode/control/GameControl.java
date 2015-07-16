@@ -32,7 +32,7 @@ public class GameControl {
         BuildYourDreamAbode.setCurrentGame(game); //save in BuildYourDreamAbode
 
         game.setDesigner(designer); //save player in game
-
+        game.getDesigner();
         //create the inventory list and save in the game
         InventoryItem[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);

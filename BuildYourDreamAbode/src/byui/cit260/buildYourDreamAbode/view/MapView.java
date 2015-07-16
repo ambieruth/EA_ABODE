@@ -13,59 +13,58 @@ import byui.cit260.buildYourDreamAbode.model.Designer;
  *
  * @author ambiesnell
  */
-public class MapView extends View{
-    
-   public MapView() {
-       super("\n"
-           +"\n------------------------------------------------------"
-           +"\n| Map                                                |"
-           +"\n| Where would you like to go?                        |"
-           +"\n------------------------------------------------------"
-           +"\nH - House site"
-           +"\nS - Supply store"
-           +"\nQ - Quit"
-           +"\n------------------------------------------------------");
-   }
-   
+public class MapView extends View {
+
+    public MapView() {
+        super("\n"
+                + "\n------------------------------------------------------"
+                + "\n| Map                                                |"
+                + "\n| Where would you like to go?                        |"
+                + "\n------------------------------------------------------"
+                + "\nH - House site"
+                + "\nS - Supply store"
+                + "\nQ - Quit"
+                + "\n------------------------------------------------------");
+    }
 
     @Override
     public boolean doAction(Object obj) {
-        Designer designer;
-        
+        Designer designer = null;
+
         char choice = (char) obj;
-        
-        switch (choice) {
-            case 'H': //House site
-                this.house();
-                break;
-            case 'S': // Supply Store
-                this.supplyStore();
-                break;
-            case 'Q': // Exit the map
-                return false;
-            default:
-                ErrorView.display(this.getClass().getName(), "Error reading input: "+ e.getMessage());
-                break;
-    
-}
-       return true;
-       
-       //move actor to specified location
-       try{
-       MapControl.moveActorToLocation(designer, coordinates);
-       }
-       catch (MapControlException me) {
-           this.console.println(me.getMessage());
-       }
-       return false;
-       
-       
+        try {
+            switch (choice) {
+                case 'H': //House site
+                    this.house();
+                    break;
+                case 'S': // Supply Store
+                    this.supplyStore();
+                    break;
+                case 'Q': // Exit the map
+                    return false;
+                default:
+
+                    break;
+
+            }
+
+            //move actor to specified location
+            MapControl.moveActorsToStartingLocation(designer, designer.getCoordinates());
+            return true;
+        } catch (MapControlException me) {
+            this.console.println(me.getMessage());
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
+        }
+        return false;
+
     }
+
     private void house() {
-this.console.println("\n*** house stub function called***");    
+        this.console.println("\n*** house stub function called***");
     }
-    
+
     private void supplyStore() {
-System.out.println("\n*** supplyStore stub function called***");
+        System.out.println("\n*** supplyStore stub function called***");
     }
 }

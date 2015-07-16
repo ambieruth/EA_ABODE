@@ -5,6 +5,12 @@
  */
 package byui.cit260.buildYourDreamAbode.view;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author ElisaHutchings
@@ -27,21 +33,25 @@ public class GameMenuView extends View {
 
         char choice = (char) obj;
 
-        switch (choice) {
-            case 'M': //Go to the map
-                this.map();
-                break;
-            case 'I': //See Inventory
-                this.designerInventory();
-                break;
-            case 'R': //Print Report
-                this.report();
-                break;
-            case 'Q': // Exit the program
-                return false;
-            default:
-                ErrorView.disaply(this, getClass().getName(), "Error reading input" + e.getMessage());
-                break;
+        try {
+            switch (choice) {
+                case 'M': //Go to the map
+                    this.map();
+                    break;
+                case 'I': //See Inventory
+                    this.designerInventory();
+                    break;
+                case 'R': //Print Report
+                    this.report();
+                    break;
+                case 'Q': // Exit the program
+                    return false;
+                default:
+
+                    break;
+            }
+        } catch (Exception e) {
+            ErrorView.display(this, getClass().getName(), "Error reading input" + e.getMessage());
         }
         return true;
     }
@@ -51,12 +61,37 @@ public class GameMenuView extends View {
     }
 
     private void designerInventory() {
-        this.console.println("\n*** designerInventory stub function called***");
+        designerInventory(this.console);
+    }
+
+    private void designerInventory(PrintWriter out) {
+        out.println("\n\n*********************************************");
+
+        out.println("*                                         *"
+                + "\n* Report of Inventory Items     *"
+                + "\n* -------------------------------------------       *"
+                + "\n* DESCRIPTION      REQUIRED        IN STOCK            *"
+                + "\n* Beds             5               2                     *"
+                + "\n* Tables           2               2                     *"
+                + "\n* Chairs           14              10                    *"
+                + "\n* Couches          4               6                     *"
+                + "\n* Paint            20              30                    *");
+
+        out.println("*************************************************");
     }
 
     private void report() {
-        ReportFile reportFile = new ReportFile();
-        reportFile.display();
+        PrintWriter printFile = null;
+        try {
+            File outFile = new File("InventoryReport.txt");
+            printFile = new PrintWriter(outFile);
+            designerInventory(printFile);
+            printFile.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            printFile.close();
+        }
 
     }
 }

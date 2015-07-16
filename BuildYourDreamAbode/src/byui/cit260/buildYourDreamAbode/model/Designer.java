@@ -5,6 +5,7 @@
  */
 package byui.cit260.buildYourDreamAbode.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,7 +17,7 @@ public class Designer implements Serializable{
     
     //class instance variables
     private String name;
-    private String coordinates;
+    private Point coordinates;
     
     private InventoryItem[] designerInventory;
 
@@ -62,11 +63,11 @@ public class Designer implements Serializable{
         this.name = name;
     }
 
-    public String getCoordinates() {
+    public Point getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(String coordinates) {
+    public void setCoordinates(Point coordinates) {
         this.coordinates = coordinates;
     }
 
