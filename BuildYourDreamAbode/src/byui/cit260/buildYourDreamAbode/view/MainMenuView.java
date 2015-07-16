@@ -60,7 +60,7 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         //create a new game
-        GameControl.createNewGame(BuildYourDreamAbode.getDesigner());
+        //GameControl.createNewGame(BuildYourDreamAbode.getDesigner());
 
         //disaply the game menu
         GameMenuView gameMenu = new GameMenuView();
